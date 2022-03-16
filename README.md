@@ -18,8 +18,53 @@ These files have been tested and used to generate a live ELK deployment on Azure
   ELK-PLAYBOOK
 
 
-  - _TODO: Enter the playbook file._
+  ---
+- name: installing and launch filebeat
+  hosts: webservers
+  become: yes
+  tasks:
+  - name: Download filebeat .deb file
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+  - name: install filebeat .deb
+    command: dpkg -i filebeat-7.4.0-amd64.deb
+  - name: drop in filebeat.yml
+    copy:
+      src: /etc/ansible/files/filebeat-config.yml
+      dest: /etc/filebeat/filebeat.yml
+  - name: enable and configure module
+    command: filebeat modules enable system
+  - name: setup
+    command: filebeat setup
+  - name: start filebeat start
+    command: service filebeat start
+  - name: enable on boot
+    systemd:
+      name: filebeat
+      enabled: yes
 
+
+
+Metric Beat YML. file
+
+- name: install metricbeat
+    command: dpkg -i metricbeat-7.4.0-amd64.deb
+  - name: drop in metricbeat config
+    copy:
+      src: /etc/files/metricbeat-reference
+      dest: /etc/metricbeat/metricbeat.yml
+  - name: run metric beat enable command
+    command: metricbeat modules enable docker
+  - name: metricbeat setup
+    command: metricbeat setup
+  - name: start metric beat
+    command: service metricbeat start
+  - name: enable metricbeat on boot
+    systemd:
+      name: metricbeat
+      enabled: yes
+  
+  
+  
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
