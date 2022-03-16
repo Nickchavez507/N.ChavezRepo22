@@ -4,7 +4,8 @@ N.Chavez-CS22
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+![N CHAVEZ ELK-STACK DIAGRAM](https://user-images.githubusercontent.com/101543246/158514913-a1282cf6-8764-4fd2-bfea-eaced94f0b94.png)
+
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
