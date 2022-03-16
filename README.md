@@ -43,8 +43,19 @@ They protect a DDoS attack, and a purpose of a jumpbox is a secure computer that
 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+
+
+
+What does Filebeat watch for?_
+
+
+For sending and unify any log data
+
+What does Metricbeat record?
+
+
+metrics and stats. Such as elasticsearch or log stash
+
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
